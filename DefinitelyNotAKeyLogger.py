@@ -56,7 +56,7 @@ def main():
         message["Subject"] = subject
             
         message.attach(MIMEText(body, "plain"))
-        filename = "log_file.txt"
+        filename = f'{os.getcwd()}/{datetime.now().strftime("%d-%m-%Y|%H:%M")}.log'
 
         with open (filename, "rb") as attachment:
             part = MIMEBase("application", "octet-stream")
